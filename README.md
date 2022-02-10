@@ -1,2 +1,2 @@
-# FastAPI_MySQL
-for LIBRARY DBMS
+# LIBRARY DBMS
+with MySQL and FastAPI
