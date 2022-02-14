@@ -68,7 +68,7 @@ def update_student_details(sl_id: int, update_param: schema.UpdateStudent, db: S
 @app.get('/retrieve_all_book_details', response_model=List[schema.Book])
 def retrieve_all_book_details(skip: int = 0, limit: int = 100, db: Session = Depends(get_db)):
     books = crud.get_books(db=db, skip=skip, limit=limit)
-    return book
+    return books
 
 
 @app.post('/add_new_book', response_model=schema.BookAdd)
@@ -76,7 +76,7 @@ def add_new_book(BOOK: schema.BookAdd, db: Session = Depends(get_db)):
     book_id = crud.get_book_by_book_id(db=db, BOOK_ID=BOOK.BOOK_ID)
     if book_id:
         raise HTTPException(status_code=400, detail=f"Book id {BOOK.BOOK_ID} already exist in database: {BOOK_ID}")
-    return crud.add_student_details_to_db(db=db, STUDENT=STUDENT)
+    return crud.add_book_details_to_db(db=db, BOOK=BOOK)
 
 
 @app.delete('/delete_book_by_book_id')
@@ -104,3 +104,10 @@ def update_book_details(sl_id: int, update_param: schema.UpdateBook, db: Session
 ########################################################################################################################################
 
 
+    
+    
+    
+    
+    
+    
+    

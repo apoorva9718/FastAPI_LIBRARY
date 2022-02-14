@@ -1,18 +1,19 @@
 from typing import Optional
 from pydantic import BaseModel
-#import datetime
+from datetime import date as date_type
 
 class StudentBase(BaseModel):
     STUD_ID: int
     STUD_NAME: str
     STUD_EMAIL: str
-    #STUD_DOB: datetime
+    STUD_DOB: date_type
 
 
 class StudentAdd(StudentBase):
-    STUD_NAME: str
-    STUD_EMAIL: str
-    #STUD_DOB: datetime
+    STUD_ID: int
+    #STUD_NAME: str
+    #STUD_EMAIL: str
+    #STUD_DOB: date_type
    
     class Config:
         orm_mode = True
@@ -33,16 +34,16 @@ class UpdateStudent(BaseModel):
 
 class BookBase(BaseModel):
     BOOK_ID: int
-    BOOK_NAME: str
+    BOOK_TITLE: str
     ISBN: str
     AUTHOR: str
 
 
 class BookAdd(BookBase):
     BOOK_ID: int
-    BOOK_NAME: str
-    ISBN: str
-    AUTHOR: str
+   # BOOK_TITLE: str
+   # ISBN: str
+   # AUTHOR: str
    
     class Config:
         orm_mode = True

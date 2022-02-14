@@ -52,7 +52,7 @@ def get_books(db: Session, skip: int = 0, limit: int = 100):
 def add_book_details_to_db(db: Session, Book: schema.BookAdd):
     bk_details = model.Book(
     	BOOK_ID=BOOK.BOOK_ID,
-    	BOOK_NAME=BOOK.BOOK_NAME,
+    	BOOK_TITLE=BOOK.BOOK_TITLE,
     	ISBN=BOOK.ISBN,
     	AUTHOR=BOOK.AUTHOR
         )
@@ -75,5 +75,21 @@ def delete_book_details_by_id(db: Session, sl_id: int):
     except Exception as e:
         raise Exception(e)
         
-        
+###################################################################################################
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+     
 

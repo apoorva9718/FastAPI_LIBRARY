@@ -17,7 +17,7 @@ class Book(Base):
 
     __tablename__ = "BOOK"
     BOOK_ID = Column(Integer, primary_key=True, index=True, nullable=False)
-    BOOK_NAME = Column(String(30), unique=True, index=True, nullable=False)
+    BOOK_TITLE = Column(String(30), unique=True, index=True, nullable=False)
     ISBN = Column(String(30), index=True, nullable=False)
     AUTHOR = Column(String(30), index=True, nullable=False)
     
@@ -34,3 +34,4 @@ class Record(Base):
     
     record = relationship("Student", back_populates="student")
     owner = relationship("Book", back_populates="book")
+    
